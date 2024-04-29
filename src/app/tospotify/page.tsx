@@ -29,7 +29,7 @@ const Page = () => {
     }
   };
   return (
-    <div className="w-full h-screen  gap-6 flex flex-col   items-center">
+    <div className="w-full  h-screen  gap-6 flex flex-col   items-center">
       <div className=" mt-20 ">
         <Input
           type="text"

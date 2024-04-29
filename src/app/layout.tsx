@@ -38,9 +38,7 @@ export default function RootLayout({
                 color: "#fff",
               },
             }}
-             
             reverseOrder={false}
-            duration={3000}
           />
           <NextUIProvider>{children}</NextUIProvider>
         </ThemeProvider>

@@ -5,6 +5,8 @@ import { Input } from '@/components/ui/input'
 import { useRouter } from 'next/navigation'
 import { useRef } from 'react'
 import toast from 'react-hot-toast'
+import YoutubeData from '@/shared/table/youtubeData'
+ 
 
 const Page = () => {
    const router = useRouter();
@@ -27,19 +29,23 @@ const Page = () => {
      }
    };
   return (
-    <div className="w-full h-screen  gap-6 flex flex-col   items-center">
-      <div className=" mt-20 ">
+    <div className="w-full h-screen  gap-6 flex flex-col mt-20  ">
+      <div className="flex  justify-center  gap-6">
         <Input
           type="text"
-          value={localStorage.getItem("url") || ""}
+          defaultValue={localStorage?.getItem("url") || ""}
           placeholder="Paste your Youtube public or unlisted playlist URL to convert"
           className=" ring-2 ring-pink-600    w-[600px]   placeholder:capitalize"
           ref={ref}
         />
-      </div>
+      
       <Button className="font-bold" onClick={handleConvert}>
         Convert
-      </Button>
+        </Button>
+      </div>
+      <div className='w-1/2 self-center mt-10'>
+        <YoutubeData/>
+      </div>
       </div>
   )
 }
