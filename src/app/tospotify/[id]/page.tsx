@@ -54,7 +54,7 @@ const Page = () => {
       <div className="w-1/2 self-center mt-10">
         <YoutubeData />
       </div>
-      <Button className="sticky font-bold bottom-0 w-1/2 shadow-md self-center dark:bg-gradient-to-r to-green-600 via-purple-600 from-green-600" onClick={handleToSpotify}>
+      <Button className="sticky font-bold bottom-0 w-1/2 shadow-md self-center dark:bg-gradient-to-r to-red-600 via-green-600 from-red-600" onClick={handleToSpotify}>
         Proceed To Convert
       </Button>
     </div>
