@@ -7,13 +7,14 @@ import { useRef } from 'react'
 import GetSpotifyToken from '@/shared/utils/toSpotifyServer/getSpotifyToken'
 import toast from 'react-hot-toast'
 import YoutubeData from '@/shared/table/youtubeData'
+import ConvertToSpotify from '@/shared/utils/toSpotifyServer/convertToSpotify'
  
 const Page = () => {
   const router = useRouter();
   const ref = useRef<HTMLInputElement>(null);
   const handleConvert = () => {
     if (ref.current?.value) {
-      const url = ref.current.value;
+    const url = ref.current.value;
       localStorage.setItem("url", url);
       if (url.includes("playlist")) {
         const playlistId = url.split("list=")[1];
@@ -32,9 +33,11 @@ const Page = () => {
    
    
   const handleToSpotify = async () => {
-    router.push("/tospotify");
-    const token = await GetSpotifyToken();
-    console.log(token);
+    const pathname = window.location.pathname;
+    const params = pathname.split("/").pop();
+    const res = await ConvertToSpotify(params as string);
+    console.log(res);
+    
   };
  
   return (

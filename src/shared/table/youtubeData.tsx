@@ -4,10 +4,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 const YoutubeData = ( ) => {
   const [data, setData] = useState<any[]>([]);
   const [loaded, setLoaded] = useState<boolean>();
-
+ 
   const pathname = window.location.pathname;
   const params = pathname.split("/").pop();
 
+
+  
   useEffect(() => {
     fetchYoutubeData();
   }, []);
@@ -26,9 +28,11 @@ const YoutubeData = ( ) => {
       setLoaded(false);
     }
   };
- // console.log(data);
+ 
   return (
-    <div className="relative  shadow-md  rounded-lg">
+    <div
+      className="relative  shadow-md  rounded-lg"
+    >
       <table className="w-full text-sm text-left  rtl:text-right text-gray-500 dark:text-gray-200">
         <thead className="text-xs text-gray-900 rounded-lg uppercase bg-gray-50 dark:bg-red-800 dark:text-gray-100">
           <tr>
@@ -39,14 +43,7 @@ const YoutubeData = ( ) => {
             <th scope="col" className="px-3 py-3 text-center">
               Description
             </th>
-            {/* <th scope="col" className=" flex px-6 py-3 text-center ">
-              <input
-                id="vue-checkbox"
-                type="checkbox"
-                value=""
-                className="w-5 h-5 rounded-full text-blue-600 bg-blue-600 border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-blue-600 dark:border-gray-500"
-              />
-            </th> */}
+             
           </tr>
         </thead>
         <tbody>
@@ -61,12 +58,9 @@ const YoutubeData = ( ) => {
                   </td>
                   <td className="px-4 py-2">
                     <Skeleton className="h-4 w-[400px]" />
-                    <Skeleton className="h-2 mt-2 w-[410px]" />{" "}
-                    <Skeleton className="h-2 mt-2 w-[430px]" />
+                    <Skeleton className="h-2 mt-2 w-[450px]" />{" "}
                     <Skeleton className="h-2 mt-2 w-[450px]" />
-                  </td>
-                  <td className="text-center">
-                    <input type="checkbox" />
+                    <Skeleton className="h-2 mt-2 w-[450px]" />
                   </td>
                 </tr>
               ))
@@ -86,9 +80,7 @@ const YoutubeData = ( ) => {
                       {item?.snippet?.description}
                     </div>
                   </td>
-                  {/* <td className="text-center">
-                    <input type="checkbox" />
-                  </td> */}
+                  
                 </tr>
               ))}
         </tbody>
